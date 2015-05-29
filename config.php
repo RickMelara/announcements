@@ -1,14 +1,13 @@
 <?php
 
 //Verify if is network admin
-//if ( is_network_admin() ) :
 	/*******************************
 	* Checking if Redux is REAL!! *
 	*******************************/
 	if ( ! class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' ) ) :
 		require_once( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' );
 	endif;
-
+	
 	/**************
 	* Option Name *
 	**************/
@@ -21,7 +20,7 @@
 		'display_version' 		=> '0.2',
 		'database'				=> 'network',
 		'network_admin'			=> true,
-		'network_sites'			=> true,
+		'network_sites'			=> false,
 		'allow_sub_menu'		=> false,
 		'menu_title'        	=> 'UAM Site Announcements',
 		'page_title'     		=> 'UAM Site Announcements',
@@ -47,8 +46,6 @@
 		'default_mark'         => '',
 		'show_import_export'   => true
 	);
-
-	//var/log/system.log
 
 	//Setting Args
 	Redux::setArgs( $opt_name, $args );
@@ -94,7 +91,7 @@
 		)
 	);
 
-	//Setting Sites Sec
+	//Setting Sites Sections
 	foreach (wp_get_sites() as $sites) :
 		$name = get_blog_details($sites['blog_id'])->blogname;
 		$id = get_blog_details($sites['blog_id'])->blog_id;
@@ -154,5 +151,4 @@
 			)
 		) );
 	endforeach;
-//endif;
 ?>
