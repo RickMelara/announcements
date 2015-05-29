@@ -114,7 +114,8 @@
 					'type'  		=> 'color',
 					'title' 		=> 'Text Color',
 					'desc'			=> 'Select Text Color',
-					'output'		=>	array( '#uamAnnouncementsBar_' . $id )
+					'output'		=>	array( '#uamAnnouncementsBar_' . $id ),
+					'default'		=>	'#FFFFFF'
 				),
 				array(
 					'id'    		=>  'uam_border_options_' . $id,
@@ -133,7 +134,7 @@
 					'title'			=>	'Bar Background',
 					'output'		=>	array( '#uamAnnouncementsBar_' . $id ),
 					'default'   	=> 	array(
-						'color'     => 	'#fdfdfd'
+						'background-color'     => 	'#E8B733'
 					),
 				),
 				array(
